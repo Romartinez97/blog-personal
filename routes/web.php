@@ -8,10 +8,10 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 
-Route::get('/', [HomeController::class, 'index']);
-Route::get('login', [LoginController::class,'index']);
-Route::get('logout', [LogoutController::class,'index']);
-Route::get('category', [CategoryController::class,'index']);
-Route::get('category/show/{id}', [CategoryController::class, 'show']);
-Route::get('create', [CreateController::class,'index']);
-Route::get('edit/{id}', [EditController::class,'index']);
+Route::get('/', [HomeController::class, 'getIndex']);
+Route::get('auth/login', [LoginController::class, 'getIndex']);
+Route::get('logout', [LogoutController::class, 'getIndex']);
+Route::get('category', [CategoryController::class, 'getIndex']);
+Route::get('category/show/{id}', [CategoryController::class, 'getShow']);
+Route::get('category/create', [CategoryController::class, 'getCreate']);
+Route::get('category/edit/{id}', [CategoryController::class, 'getEdit']);

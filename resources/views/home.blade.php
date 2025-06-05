@@ -1,13 +1,14 @@
 @extends('layouts.app')
 
-@section('title', 'Home')
+@section('title', 'Página principal')
 
 @section('content')
-    <h1>Welcome to the homepage!</h1>
+    <h1>Página principal</h1>
+
     <x-alert type="danger">
         <x-slot name="title">
             ¡Cuidado!
         </x-slot>
         Contenido de la alerta
-        <x-alert />
-    @endsection
+    </x-alert>
+@endsection

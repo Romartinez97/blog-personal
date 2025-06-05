@@ -1,14 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.app')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Category show</title>
-</head>
+@section('title', 'Post {{id}}')
 
-<body>
-    <h1>Welcome to the category page with id {{$id}}!</h1>
-</body>
-
-</html>
+@section('content')
+    <h1>Vista detalle del post {{id}}</h1>
+@endsection

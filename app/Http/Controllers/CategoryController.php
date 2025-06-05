@@ -6,13 +6,23 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
-    public function index()
+    public function getIndex()
     {
-        return view('post.index');
+        return view('category.index');
     }
 
-    public function show($id)
+    public function getShow($id)
     {
-        return view('post.show', compact('id'));
+        return view('category.show', compact('id'));
+    }
+
+    public function getCreate()
+    {
+        return view('category.create', compact('id'));
+    }
+
+    public function getEdit($id)
+    {
+        return view('category.edit', compact('id'));
     }
 }

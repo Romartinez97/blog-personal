@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
-    public function index(){
-        return "Welcome to the login page";
+    public function getIndex(){
+        return view('auth.login');
     }
 }
