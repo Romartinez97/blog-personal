@@ -6,11 +6,13 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
-    public function index(){
-        return "Welcome to the category page";
+    public function index()
+    {
+        return view('post.index');
     }
 
-    public function show($id){
-        return "Welcome to the category page with id: $id";
+    public function show($id)
+    {
+        return view('post.show', compact('id'));
     }
 }
