@@ -15,5 +15,5 @@ Route::get('category/show/{id}', [CategoryController::class, 'getShow']);
 Route::get('category/create', [CategoryController::class, 'getCreate']);
 Route::get('category/edit/{id}', [CategoryController::class, 'getEdit']);
 Route::resource('posts', PostController::class);
-Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/categories/{category}', [CategoryController::class, 'show'])->name('categories.show');
+Route::get('/', [HomeController::class, 'getIndex'])->name('home');
+Route::get('/categories/{category}', [CategoryController::class, 'getShow'])->name('categories.show');

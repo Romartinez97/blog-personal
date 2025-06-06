@@ -1,34 +1,23 @@
-<?php $__env->startSection('title', 'Página principal'); ?>
+<?php $__env->startSection('title', 'Inicio'); ?>
 
 <?php $__env->startSection('content'); ?>
-    <h1>Página principal</h1>
+  <h1 class="text-2xl font-bold mb-4">Todos los posts</h1>
 
-    <!--
-        <?php if (isset($component)) { $__componentOriginalb5e767ad160784309dfcad41e788743b = $component; } ?>
-<?php if (isset($attributes)) { $__attributesOriginalb5e767ad160784309dfcad41e788743b = $attributes; } ?>
-<?php $component = App\View\Components\Alert::resolve(['type' => 'danger'] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
-<?php $component->withName('alert'); ?>
-<?php if ($component->shouldRender()): ?>
-<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
-<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
-<?php $attributes = $attributes->except(\App\View\Components\Alert::ignoredParameterNames()); ?>
-<?php endif; ?>
-<?php $component->withAttributes([]); ?>
-             <?php $__env->slot('title', null, []); ?> 
-                ¡Cuidado!
-             <?php $__env->endSlot(); ?>
-            Contenido de la alerta
-         <?php echo $__env->renderComponent(); ?>
-<?php endif; ?>
-<?php if (isset($__attributesOriginalb5e767ad160784309dfcad41e788743b)): ?>
-<?php $attributes = $__attributesOriginalb5e767ad160784309dfcad41e788743b; ?>
-<?php unset($__attributesOriginalb5e767ad160784309dfcad41e788743b); ?>
-<?php endif; ?>
-<?php if (isset($__componentOriginalb5e767ad160784309dfcad41e788743b)): ?>
-<?php $component = $__componentOriginalb5e767ad160784309dfcad41e788743b; ?>
-<?php unset($__componentOriginalb5e767ad160784309dfcad41e788743b); ?>
-<?php endif; ?>
-    -->
+  <?php $__empty_1 = true; $__currentLoopData = $posts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $post): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
+    <div class="mb-6 p-4 border rounded">
+      <h2 class="text-xl font-semibold"><?php echo e($post->title); ?></h2>
+      <p class="text-sm text-gray-600">
+        Categoría: 
+        <a href="<?php echo e(route('categories.show', $post->category)); ?>" class="underline">
+          <?php echo e($post->category->name); ?>
+
+        </a>
+      </p>
+      <p class="mt-2"><?php echo e(Str::limit($post->content, 150)); ?></p>
+    </div>
+  <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
+    <p>No hay posts para mostrar.</p>
+  <?php endif; ?>
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.app', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH C:\xampp\htdocs\trabajosPWA\blog-personal\resources\views/home.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.main', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?><?php /**PATH C:\xampp\htdocs\trabajosPWA\blog-personal\resources\views/home.blade.php ENDPATH**/ ?>
