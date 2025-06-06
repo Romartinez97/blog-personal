@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('poster');
             $table->boolean('habilitated');
             $table->text('content');
+            $table->foreignId('category_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

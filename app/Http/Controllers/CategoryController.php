@@ -4,16 +4,20 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Category;
+
 class CategoryController extends Controller
 {
     public function getIndex()
     {
-        return view('category.index');
+        $categories = Category::all();
+        return view('category.index', compact('categories'));
     }
 
-    public function getShow($id)
+    public function getShow(Category $category)
     {
-        return view('category.show', compact('id'));
+        $posts = $category->posts()->with('category')->get();
+    return view('category.show', compact('category', 'posts'));
     }
 
     public function getCreate()

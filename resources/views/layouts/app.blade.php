@@ -1,31 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'Blog Personal')</title>
-    @vite('resources/css/app.css')
-</head>
-
-<body>
-    <nav class="bg-white shadow px-6 py-4 mb-8">
-        <div class="container mx-auto flex justify-between items-center">
-            <a href="{{ url('/') }}" class="text-xl font-bold text-indigo-600">Mi Blog</a>
-            <div class="space-x-4">
-                <a href="{{ url('/') }}" class="text-gray-800 hover:text-indigo-600">Inicio</a>
-                <a href="{{ url('/category') }}" class="text-gray-800 hover:text-indigo-600">Categorías</a>
-                <a href="{{ url('/auth/login') }}" class="text-gray-800 hover:text-indigo-600">Login</a>
-                <a href="{{ url('/logout') }}" class="text-gray-800 hover:text-indigo-600">Logout</a>
-            </div>
+<nav class="bg-white shadow px-6 py-4 mb-8">
+    <div class="container mx-auto flex justify-between items-center">
+  
+      <!-- Logo o nombre del blog -->
+      <a href="{{ route('home') }}" class="text-xl font-bold text-indigo-600">Mi Blog</a>
+  
+      <!-- Enlaces principales -->
+      <div class="flex items-center space-x-4">
+        <a href="{{ route('home') }}" class="text-gray-800 hover:text-indigo-600">Inicio</a>
+  
+        <!-- Dropdown de categorías -->
+        <div class="relative group">
+          <button class="text-gray-800 hover:text-indigo-600 focus:outline-none">
+            Categorías
+          </button>
+          <div
+            class="absolute left-0 mt-2 w-48 bg-white border rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity"
+          >
+            @foreach($navCategories as $category)
+              <a
+                href="{{ route('categories.show', $category) }}"
+                class="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+              >
+                {{ $category->name }}
+              </a>
+            @endforeach
+          </div>
         </div>
-    </nav>
-
-    <header></header>
-    <main class="container mx-auto px-6">
-        @yield('content')
-    </main>
-    <footer></footer>
-</body>
-
-</html>
+  
+        <a href="{{ route('login') }}" class="text-gray-800 hover:text-indigo-600">Login</a>
+        <a href="{{ route('logout') }}" class="text-gray-800 hover:text-indigo-600">Logout</a>
+      </div>
+  
+    </div>
+  </nav>
+  
