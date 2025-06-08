@@ -1,19 +1,37 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\ProfileController;
+use Illuminate\Support\Facades\Route;
 
-Route::get('/', [HomeController::class, 'getIndex']);
-Route::get('auth/login', [LoginController::class, 'getIndex']);
-Route::get('logout', [LogoutController::class, 'getIndex']);
-Route::get('category', [CategoryController::class, 'getIndex']);
-Route::get('category/show/{id}', [CategoryController::class, 'getShow']);
-Route::get('category/create', [CategoryController::class, 'getCreate']);
-Route::get('category/edit/{id}', [CategoryController::class, 'getEdit']);
-Route::resource('posts', PostController::class);
+// Página principal
 Route::get('/', [HomeController::class, 'getIndex'])->name('home');
-Route::get('/categories/{category}', [CategoryController::class, 'getShow'])->name('categories.show');
+Route::get('/posts/{post}', [PostController::class, 'show'])->name('posts.show');
+
+
+// Rutas para categorías
+Route::get('/category', [CategoryController::class, 'getIndex'])->name('category.index');
+Route::get('/category/show/{id}', [CategoryController::class, 'getShow'])->name('category.show');
+
+// Rutas protegidas
+Route::middleware('auth')->group(function () {
+
+    //Dashboard
+    Route::get('/dashboard', [HomeController::class, 'getIndex'])->name('dashboard');
+
+    //Categorías
+    Route::get('/create', [CategoryController::class, 'getCreate'])->name('category.create');
+    Route::get('/edit/{id}', [CategoryController::class, 'getEdit'])->name('category.edit');
+    Route::put('/{id}', [CategoryController::class, 'update'])->name('category.update');
+    Route::delete('/{id}', [CategoryController::class, 'destroy'])->name('category.destroy');
+
+    //Perfil del usuario
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+// Rutas de autenticación generadas por Breeze
+require __DIR__ . '/auth.php';

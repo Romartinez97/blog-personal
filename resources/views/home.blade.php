@@ -1,22 +1,19 @@
-@extends('layouts.main')
+@extends('layouts.app')
 
-@section('title', 'Inicio')
+@section('title', 'BAD VIBRATIONS')
 
 @section('content')
-  <h1 class="text-2xl font-bold mb-4">Todos los posts</h1>
+    <h1 class="text-3xl font-bold mb-6 text-black mt-5">Album reviews</h1>
 
-  @forelse($posts as $post)
-    <div class="mb-6 p-4 border rounded">
-      <h2 class="text-xl font-semibold">{{ $post->title }}</h2>
-      <p class="text-sm text-gray-600">
-        Categoría: 
-        <a href="{{ route('categories.show', $post->category) }}" class="underline">
-          {{ $post->category->name }}
-        </a>
-      </p>
-      <p class="mt-2">{{ Str::limit($post->content, 150) }}</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        @forelse($posts as $post)
+            <x-post-card :post="$post" />
+        @empty
+            <p>There are no reviews to show</p>
+        @endforelse
     </div>
-  @empty
-    <p>No hay posts para mostrar.</p>
-  @endforelse
+
+    <div class="mt-6">
+        {{ $posts->links() }}
+    </div>
 @endsection

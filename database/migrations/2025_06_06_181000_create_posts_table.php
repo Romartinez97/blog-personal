@@ -14,9 +14,11 @@ return new class extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->string('poster');
-            $table->boolean('habilitated');
+            $table->string('artist');
+            $table->string('poster')->default('default.jpg');
+            $table->boolean('habilitated') -> default(true);
             $table->text('content');
+            $table->decimal('rating', 2, 1)->default(0);
             $table->foreignId('category_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });

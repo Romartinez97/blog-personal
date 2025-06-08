@@ -22,6 +22,7 @@ class PostController extends Controller
     {
         $validated = $request->validate([
             'title' => 'required|string|max:255',
+            'artist' => 'required|string|max:255',
             'content' => 'required',
             'poster' => 'nullable|string',
             'habilitated' => 'boolean'
@@ -46,6 +47,7 @@ class PostController extends Controller
     {
         $validated = $request->validate([
             'title' => 'required|string|max:255',
+            'artist' => 'required|string|max:255',
             'content' => 'required',
             'poster' => 'nullable|string',
             'habilitated' => 'boolean'

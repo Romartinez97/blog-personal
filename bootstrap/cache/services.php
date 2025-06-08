@@ -3,35 +3,35 @@
   array (
     0 => 'Illuminate\\Auth\\AuthServiceProvider',
     1 => 'Illuminate\\Broadcasting\\BroadcastServiceProvider',
-    2 => 'Illuminate\\Bus\\BusServiceProvider',
-    3 => 'Illuminate\\Cache\\CacheServiceProvider',
-    4 => 'Illuminate\\Foundation\\Providers\\ConsoleSupportServiceProvider',
-    5 => 'Illuminate\\Concurrency\\ConcurrencyServiceProvider',
-    6 => 'Illuminate\\Cookie\\CookieServiceProvider',
-    7 => 'Illuminate\\Database\\DatabaseServiceProvider',
-    8 => 'Illuminate\\Encryption\\EncryptionServiceProvider',
-    9 => 'Illuminate\\Filesystem\\FilesystemServiceProvider',
-    10 => 'Illuminate\\Foundation\\Providers\\FoundationServiceProvider',
-    11 => 'Illuminate\\Hashing\\HashServiceProvider',
-    12 => 'Illuminate\\Mail\\MailServiceProvider',
-    13 => 'Illuminate\\Notifications\\NotificationServiceProvider',
-    14 => 'Illuminate\\Pagination\\PaginationServiceProvider',
-    15 => 'Illuminate\\Auth\\Passwords\\PasswordResetServiceProvider',
-    16 => 'Illuminate\\Pipeline\\PipelineServiceProvider',
-    17 => 'Illuminate\\Queue\\QueueServiceProvider',
-    18 => 'Illuminate\\Redis\\RedisServiceProvider',
-    19 => 'Illuminate\\Session\\SessionServiceProvider',
-    20 => 'Illuminate\\Translation\\TranslationServiceProvider',
-    21 => 'Illuminate\\Validation\\ValidationServiceProvider',
-    22 => 'Illuminate\\View\\ViewServiceProvider',
-    23 => 'Laravel\\Pail\\PailServiceProvider',
-    24 => 'Laravel\\Sail\\SailServiceProvider',
-    25 => 'Laravel\\Tinker\\TinkerServiceProvider',
-    26 => 'Carbon\\Laravel\\ServiceProvider',
-    27 => 'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider',
-    28 => 'Termwind\\Laravel\\TermwindServiceProvider',
-    29 => 'Pest\\Laravel\\PestServiceProvider',
-    30 => 'App\\Providers\\AppServiceProvider',
+    2 => 'Illuminate\\Cache\\CacheServiceProvider',
+    3 => 'Illuminate\\Foundation\\Providers\\ConsoleSupportServiceProvider',
+    4 => 'Illuminate\\Cookie\\CookieServiceProvider',
+    5 => 'Illuminate\\Database\\DatabaseServiceProvider',
+    6 => 'Illuminate\\Encryption\\EncryptionServiceProvider',
+    7 => 'Illuminate\\Filesystem\\FilesystemServiceProvider',
+    8 => 'Illuminate\\Foundation\\Providers\\FoundationServiceProvider',
+    9 => 'Illuminate\\Hashing\\HashServiceProvider',
+    10 => 'Illuminate\\Mail\\MailServiceProvider',
+    11 => 'Illuminate\\Notifications\\NotificationServiceProvider',
+    12 => 'Illuminate\\Pagination\\PaginationServiceProvider',
+    13 => 'Illuminate\\Pipeline\\PipelineServiceProvider',
+    14 => 'Illuminate\\Queue\\QueueServiceProvider',
+    15 => 'Illuminate\\Redis\\RedisServiceProvider',
+    16 => 'Illuminate\\Session\\SessionServiceProvider',
+    17 => 'Illuminate\\Translation\\TranslationServiceProvider',
+    18 => 'Illuminate\\Validation\\ValidationServiceProvider',
+    19 => 'Illuminate\\View\\ViewServiceProvider',
+    20 => 'Laravel\\Breeze\\BreezeServiceProvider',
+    21 => 'Laravel\\Pail\\PailServiceProvider',
+    22 => 'Laravel\\Sail\\SailServiceProvider',
+    23 => 'Laravel\\Tinker\\TinkerServiceProvider',
+    24 => 'Carbon\\Laravel\\ServiceProvider',
+    25 => 'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider',
+    26 => 'Termwind\\Laravel\\TermwindServiceProvider',
+    27 => 'Pest\\Laravel\\PestServiceProvider',
+    28 => 'App\\Providers\\RouteServiceProvider',
+    29 => 'App\\Providers\\AppServiceProvider',
+    30 => 'App\\Providers\\RouteServiceProvider',
   ),
   'eager' => 
   array (
@@ -50,18 +50,15 @@
     12 => 'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider',
     13 => 'Termwind\\Laravel\\TermwindServiceProvider',
     14 => 'Pest\\Laravel\\PestServiceProvider',
-    15 => 'App\\Providers\\AppServiceProvider',
+    15 => 'App\\Providers\\RouteServiceProvider',
+    16 => 'App\\Providers\\AppServiceProvider',
+    17 => 'App\\Providers\\RouteServiceProvider',
   ),
   'deferred' => 
   array (
     'Illuminate\\Broadcasting\\BroadcastManager' => 'Illuminate\\Broadcasting\\BroadcastServiceProvider',
     'Illuminate\\Contracts\\Broadcasting\\Factory' => 'Illuminate\\Broadcasting\\BroadcastServiceProvider',
     'Illuminate\\Contracts\\Broadcasting\\Broadcaster' => 'Illuminate\\Broadcasting\\BroadcastServiceProvider',
-    'Illuminate\\Bus\\Dispatcher' => 'Illuminate\\Bus\\BusServiceProvider',
-    'Illuminate\\Contracts\\Bus\\Dispatcher' => 'Illuminate\\Bus\\BusServiceProvider',
-    'Illuminate\\Contracts\\Bus\\QueueingDispatcher' => 'Illuminate\\Bus\\BusServiceProvider',
-    'Illuminate\\Bus\\BatchRepository' => 'Illuminate\\Bus\\BusServiceProvider',
-    'Illuminate\\Bus\\DatabaseBatchRepository' => 'Illuminate\\Bus\\BusServiceProvider',
     'cache' => 'Illuminate\\Cache\\CacheServiceProvider',
     'cache.store' => 'Illuminate\\Cache\\CacheServiceProvider',
     'cache.psr6' => 'Illuminate\\Cache\\CacheServiceProvider',
@@ -182,14 +179,11 @@
     'Illuminate\\Database\\Console\\Migrations\\StatusCommand' => 'Illuminate\\Foundation\\Providers\\ConsoleSupportServiceProvider',
     'Illuminate\\Database\\Console\\Migrations\\MigrateMakeCommand' => 'Illuminate\\Foundation\\Providers\\ConsoleSupportServiceProvider',
     'composer' => 'Illuminate\\Foundation\\Providers\\ConsoleSupportServiceProvider',
-    'Illuminate\\Concurrency\\ConcurrencyManager' => 'Illuminate\\Concurrency\\ConcurrencyServiceProvider',
     'hash' => 'Illuminate\\Hashing\\HashServiceProvider',
     'hash.driver' => 'Illuminate\\Hashing\\HashServiceProvider',
     'mail.manager' => 'Illuminate\\Mail\\MailServiceProvider',
     'mailer' => 'Illuminate\\Mail\\MailServiceProvider',
     'Illuminate\\Mail\\Markdown' => 'Illuminate\\Mail\\MailServiceProvider',
-    'auth.password' => 'Illuminate\\Auth\\Passwords\\PasswordResetServiceProvider',
-    'auth.password.broker' => 'Illuminate\\Auth\\Passwords\\PasswordResetServiceProvider',
     'Illuminate\\Contracts\\Pipeline\\Hub' => 'Illuminate\\Pipeline\\PipelineServiceProvider',
     'pipeline' => 'Illuminate\\Pipeline\\PipelineServiceProvider',
     'queue' => 'Illuminate\\Queue\\QueueServiceProvider',
@@ -204,6 +198,7 @@
     'validator' => 'Illuminate\\Validation\\ValidationServiceProvider',
     'validation.presence' => 'Illuminate\\Validation\\ValidationServiceProvider',
     'Illuminate\\Contracts\\Validation\\UncompromisedVerifier' => 'Illuminate\\Validation\\ValidationServiceProvider',
+    'Laravel\\Breeze\\Console\\InstallCommand' => 'Laravel\\Breeze\\BreezeServiceProvider',
     'Laravel\\Sail\\Console\\InstallCommand' => 'Laravel\\Sail\\SailServiceProvider',
     'Laravel\\Sail\\Console\\PublishCommand' => 'Laravel\\Sail\\SailServiceProvider',
     'command.tinker' => 'Laravel\\Tinker\\TinkerServiceProvider',
@@ -213,25 +208,16 @@
     'Illuminate\\Broadcasting\\BroadcastServiceProvider' => 
     array (
     ),
-    'Illuminate\\Bus\\BusServiceProvider' => 
-    array (
-    ),
     'Illuminate\\Cache\\CacheServiceProvider' => 
     array (
     ),
     'Illuminate\\Foundation\\Providers\\ConsoleSupportServiceProvider' => 
     array (
     ),
-    'Illuminate\\Concurrency\\ConcurrencyServiceProvider' => 
-    array (
-    ),
     'Illuminate\\Hashing\\HashServiceProvider' => 
     array (
     ),
     'Illuminate\\Mail\\MailServiceProvider' => 
-    array (
-    ),
-    'Illuminate\\Auth\\Passwords\\PasswordResetServiceProvider' => 
     array (
     ),
     'Illuminate\\Pipeline\\PipelineServiceProvider' => 
@@ -247,6 +233,9 @@
     array (
     ),
     'Illuminate\\Validation\\ValidationServiceProvider' => 
+    array (
+    ),
+    'Laravel\\Breeze\\BreezeServiceProvider' => 
     array (
     ),
     'Laravel\\Sail\\SailServiceProvider' => 

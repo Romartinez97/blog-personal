@@ -1,40 +1,19 @@
-{{-- resources/views/posts/show.blade.php --}}
-@extends('layouts.main')
+@extends('layouts.app')
 
-@section('title', $post->title)
+@section('title', $category->name)
 
 @section('content')
-  <div class="max-w-3xl mx-auto">
+    <h1 class="text-3xl font-bold text-black mt-5 mb-6">{{ $category->name }} reviews</h1>
 
-    {{-- Título --}}
-    <h1 class="text-3xl font-bold mb-4">{{ $post->title }}</h1>
-
-    {{-- Meta: categoría y fecha --}}
-    <p class="text-sm text-gray-600 mb-6">
-      Publicado en 
-      <a href="{{ route('categories.show', $post->category) }}" class="underline text-indigo-600">
-        {{ $post->category->name }}
-      </a>
-      • {{ $post->created_at->format('d M Y') }}
-    </p>
-
-    {{-- Poster (obligatorio) --}}
-    <div class="mb-6">
-      <img 
-        src="{{ asset('storage/' . $post->poster) }}" 
-        alt="Imagen de {{ $post->title }}"
-        class="w-full rounded shadow"
-      />
-    </div>
-
-    {{-- Contenido --}}
-    <div class="prose prose-lg mb-8">
-      {!! nl2br(e($post->content)) !!}
-    </div>
-
-    {{-- Enlace de regreso --}}
-    <a href="{{ route('home') }}" class="text-indigo-600 hover:underline">
-      ← Volver al listado
-    </a>
-  </div>
+    @if ($posts->isEmpty())
+        <p class="text-black text-xl mb-6">
+            There are no {{ $category->name }} reviews so far, come back later!
+        </p>
+    @else
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            @foreach($posts as $post)
+                <x-post-card :post="$post" />
+            @endforeach
+        </div>
+    @endif
 @endsection
