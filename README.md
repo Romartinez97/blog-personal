@@ -70,7 +70,7 @@ El sitio incluye sistema de registro e inicio de sesión usando la autenticació
    npm run dev
    ```
 
-10. Levantar el servidor en otra terminal:
+10. Levantar el servidor en otra terminal::
    ```bash
    php artisan serve
    ```
@@ -78,7 +78,7 @@ El sitio incluye sistema de registro e inicio de sesión usando la autenticació
 ## ⚠️ Observación importante
 Si estás usando XAMPP, asegurate de que las siguientes extensiones estén habilitadas en tu archivo php.ini:
 
-extension=mysqli
-extension=pdo_mysql
+*extension=mysqli*\
+*extension=pdo_mysql*
 
 Estas líneas deben estar descomentadas (sin punto y coma ; al inicio). Luego de modificarlas, reiniciá Apache desde el panel de control de XAMPP.

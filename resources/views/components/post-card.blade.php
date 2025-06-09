@@ -17,7 +17,7 @@
     <div class="p-4">
         <h2 class="text-lg font-bold text-black pb-1">{{ $post->title }}</h2>
         <h4 class="text-g font-bold text-black pb-1">{{ $post->artist }}</h4>
-        <p class="text-sm text-black pb-1">Categorie: {{ $post->category->name }}</p>
+        <p class="text-sm text-black pb-1">Category: {{ $post->category->name }}</p>
         <x-rating-stars :rating="$post->rating" />
     </div>
 </a>

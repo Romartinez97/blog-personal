@@ -22,8 +22,6 @@ class CategoryController extends Controller
         return view('category.show', compact('category', 'posts'));
     }
 
-
-
     public function getCreate()
     {
         return view('category.create');
