@@ -1,9 +1,11 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
+
 use Illuminate\Support\Facades\Route;
 
 // Página principal
@@ -26,6 +28,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/edit/{id}', [CategoryController::class, 'getEdit'])->name('category.edit');
     Route::put('/{id}', [CategoryController::class, 'update'])->name('category.update');
     Route::delete('/{id}', [CategoryController::class, 'destroy'])->name('category.destroy');
+
+    //Comentarios
+    Route::post('/posts/{post}/comments', [CommentController::class, 'store'])->name('comments.store');
 
     //Perfil del usuario
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
